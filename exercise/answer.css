@@ -1,0 +1,19 @@
+body{
+	max-width: 1440px;
+}
+
+.grid-one, .grid-two, .grid-three, .grid-four{
+	text-align: center;
+	position: relative;
+	display: inline-block;
+	border: 1px solid; 
+	background: #eee;
+	width: 24.44%;
+}
+
+@media screen and (max-width: 1000px) {
+	.grid-one, .grid-two, .grid-three, .grid-four{
+		display: block;
+		width: 100%;
+	}
+}

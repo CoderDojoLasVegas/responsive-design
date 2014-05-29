@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Intro to Responsive Web Design</title>
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <link rel="stylesheet" href="bootstrap.css">
+        <style>
+            p.left-justify {
+                text-align: left;
+            }
+        </style>
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>Intro to Responsive Web Design</h1>
+                </section>
+                <section>
+                    <section>
+                        <h2>Overview</h1>
+                        <br/>
+                         <small>
+                            <ol>
+                                <b><li>What is responsive design?</li></b>
+                                    <ul>               
+                                        <li>Key Ideas</li>
+                                            <ul>
+                                                <li>Fluid Grids</li>
+                                                <li>Media Queries</li>        
+                                            </ul>   
+                                        <li>Examples of Responsive Website Designs</li>
+                                        <li>See it in Action</li>
+                                    </ul>
+                                <b><li>When should you use it?</li></b>
+                                    <ul><li>Cons</li></ul>    
+                                <b><li>Why should you use it?</li></b>
+                                    <ul><li>Pros</li></ul>
+                                <b><li>Implementing Responsive Design</li></b>
+                                    <ul>
+                                        <li>Mobile First</li>
+                                        <li>Boostrap</li>
+                                        <li>Other Options</li>
+                                    </ul>
+                                <b><li>Resources to learn more.</li></b>
+                                <b><li>Exercise</li></b>
+                            </ol>
+                        </small>
+                    </section>
+                </section>    
+
+                <!-- About responsive web design -->
+                <section>
+                    <section>
+                        <h2>What is Responsive Design?</h2>
+                         <p class="left-justify" style="font-size: 20px;">
+                            A collection of techniques and ideas that aim to provide optimal viewing and navigational experience across a wide range of devices from desktops, mobile devices and tablets. A responsive website is adjusted to be useable on all devices and responds to the user’s behavior, screen size, and screen orientation.
+                        </p>
+                        <p>In other words,</p>
+                        <h4>Responsive websites respond and adjust to their environment.</h4>   
+                        <img width="50%;" src="images/TurnResponsive.png">                                                    
+                    </section>
+
+                    <!-- Key Ideas: Fluid Grids -->
+                    <section>
+                        <h2>Key Ideas: Fluid Grids</h2>
+                        <p>A fluid grid is a carefully designed layout based on proportions where all elements of the layout automatically resize their widths in relation to one another.</p>
+                        <img src="images/grid.png">
+                        <p>Issues with fluid grids:</p>
+                        <p style="font-size: 20px;">The design can break when a browser gets too narrow. For instance, a layout with three-columns won't work out as well on a mobile device. When this occurs, use <strong>media queries</strong>.</p>
+                    </section>  
+                    <section>
+                        <h2>Fluid Grids</h2>
+                        <p><b>Magic Formula</b>: ( target / context ) x 100 = result %</p>
+                        <p><small>In order to have fluid grids, you need to convert fixed pixel widths to percentages using the magic formula.</p>
+                        <p>ex: a container of 900px inside a content width of 960px would convert to 93.75%</p>
+                        <p>( 900 / 960 ) x 100 = 93.75%</small></p>
+                        <img width="40%;"src="images/fluidgrids.png">
+                    </section>
+
+                    <!-- Key Ideas: Media Queries -->
+                    <section>
+                        <h2>Key Ideas: Media Queries</h2>
+                        <p>Media queries apply certain CSS styles depending on a site visitor's information.</p>
+                         <pre>
+                    @media only screen and (min-width: 480px) {
+                        /* Small screens (default) */
+                        html { font-size: 100%; }
+                         
+                        /* Medium screens (640px) */
+                        @media (min-width: 40rem) { 
+                          html { font-size: 112%; }
+                        }
+                         
+                        /* Large screens (1024px) */
+                        @media (min-width: 64rem) { 
+                          html { font-size: 120%; }
+                        }
+                        </pre>
+                        <p>Here the font size changes at certain breakpoints.</p>
+                    </section>  
+
+                    <!-- Examples -->
+                    <section>                        
+                        <h2>Examples</h2>
+                        <img src="images/example1.png">
+                    </section>
+                    <section>
+                        <h2>Examples</h2>
+                        <img src="images/example2.png">
+                    </section>
+                    <section>
+                        <h2>Examples</h2>
+                        <img src="images/example3.png">
+                    </section> 
+
+                    <!-- See it in Action -->
+                    <section>
+                        <h2>See it in Action</h2>
+                        <p>One way to tell if a site is responsive is to slowly minimize a browser window. If the page is adjusting appropriately without triggering vertical scrollbars, then it is responsive (some sites have a limit).</p>
+                        <p>Another way to check is to view a page on a desktop and pull it up on a mobile device or tablet. If the layout is adjusted and fits perfectly 
+                        onto the screen, then it is responsive.
+                         </p>
+                        <img width="300px" src="images/leftarrow.png">
+                    </section>
+                    <section>
+                        <p>You can also check by copying and pasting your site's URL onto the site <a href="http://ami.responsivedesign.is/#" target="_blank">Am I Responsive</a></p>
+                        <p>It will show how your site looks on different devices.</p>
+                        <img width="50%" src="images/amiresponsive.png">
+                    </section>
+                    <section>
+                        <h2>See it in Action</h2>
+                        <p>Example of a responsive site: <a href="http://www.starbucks.com/" target="_blank">Starbucks</a></p>
+                        <br>
+                        <p>Example of a non-responsive site: <a href="http://www.apple.com" target="_blank">Apple</a></p>
+                        <p>Not every site needs to be responsive. Apple's site isn't responsive, but they have an app for that. It all depends on personal preference, organization stategies, etc.</p>
+                    </section>                 
+                </section>
+
+                <!-- When Should You Use Responsive Design? -->
+                <section>
+                    <section>
+                        <h2>When Should You Use Responsive Design?</h2>
+                        <p>Although having a responsive site is not necessary for everything (i.e. personal blogs and projects), it's always good practice to use responsive design when you want to attract more visitors to your site.
+                    </section>
+                    <section>
+                        <h2>When Should You Use it?</h2>
+                        <p>One reason: For business.</p>
+                        <p>If you currently run a business that depend on the company's site for sales, it will help attract customers. If your site isn't responsive, visitors may bounce off your site and onto another competitor's site if their site is easier to use.</p>
+                    </section>
+                    <section>                    
+                        <h3>Cons:</h3>
+                        <ul>
+                            <li>Since responsive websites are merely an application of alternate stylesheets, it still has to load all of its HTML markup and javascript content. This means that download times on a mobile network could take longer than the download times on a desktop.</li>
+                            <li>If you end up paying for a responsive site, it can get expensive.</li>
+                            <li>Not all tablet browsers support CSS3 that is used for media queries.</li>
+                        </ul>
+                    </section>
+                </section>
+
+            <!-- Why Should You Use Responsive Design? -->
+                <section>
+                    <h2>Why Should You Use Responsive Web Design?</h2>
+                        <h4>Pros:</h4>
+                        <ul><small>
+                            <li>Nowadays, the focus has shifted to mobility. More people are using mobile and tablet devices</li>
+                            <li>Optimal User Experience</li>
+                            <li>It is also easier to manage. You would only need to one set of content instead of multiple ones for different site versions</li>
+                            <li>One website and one URL is easier to share and link</li>
+                            <li>One website, one SEO campaign</li>
+                        </small></ul>
+                        <img width="45%" src="images/devicechart.png">
+                </section>
+                   
+                <!-- Implementing Responsive Design -->
+                <section>
+                    <section>
+                        <h2>Implementing Responsive Design</h2>
+                        <p>Since mobile usage is increasing, it is a good idea to prioritize the support of mobile context as far as user experience goes.</p>
+                        <p>The concept "Mobile First" allows you to focus and prioritize on the necessary elements.</p>
+                        <img width="50%;" src="images/mobilefirst.png">
+                    </section>
+                    <section>
+                        <h2>Implementing Responsive Design</h2>
+                        <ol>
+                        <li>Use fluid grids by using percentages. Use the <b>magic formula</b> to convert pixel widths to percentages.</li>
+                        <li>Set break points using Media Queries.</li></ol>
+                        <img src="images/fixedrelativelayout.png">
+                    </section>
+                    <section>
+                    <h2>Implementing Responsive Design</h2>
+                        <p>Another way to incorporate responsive design onto a web page is to utilize a framework called Twitter 
+                            <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></p>
+                            <p>They also have basic templates that are responsive ready.</p> 
+                        <ol>
+                            <li>Download Bootstrap from their site</li>
+                            <li>Reference the CSS and JS</li>
+                        </ol>
+                        <img width="40%" src="images/bootstrap.png"> 
+
+                    </section>
+
+                    <section>
+                        <h3>Inside the HTML document</h3>
+
+                        <h4>Without Bootstrap:</h4>
+                        <pre><small>
+    &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+         &lt;head&gt;
+             &lt;meta charset="utf-8"&gt;
+             &lt;title>No Boostrap in this project&lt;/title&gt;
+         &lt;/head&gt;
+         &lt;body>
+             &lt;p> Not Responsive :( &lt;/p&gt;
+         &lt;/body&gt;
+        &lt;/html&gt;
+                        </small></pre>
+                        <h4>With Bootstrap:</h4>
+                        <pre>
+                            <!DOCTYPE html>
+    &lt;html&gt;
+     &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title>With Bootstrap&lt;/title&gt;
+        <b>&lt;link rel="stylesheet" href="css/bootstrap.min.css"&gt;</b>
+     &lt;/head&gt;
+     &lt;body&gt;
+        &lt;p>Hello Bootstrap!&lt;/p&gt;
+        <b>&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;
+        &lt;/script&gt;</b>
+        <b>&lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;</b>
+     &lt;/body&gt;
+    &lt;/html&gt;
+                        </small></pre>
+                    </section>
+                    <section>
+                        <h2>Bootstrap</h2>
+                        <p>Use bootstrap predefined grid classes such as "col-md-4" for creating page layouts in your HTML document</p>
+                        <img src="images/bootstrap-scaffolding.png">
+                        ex:
+                        <pre>
+                    &lt;div class="row"&gt;
+                      &lt;div class="col-md-4">I am a grid&lt;/div&gt;
+                      &lt;div class="col-md-4">I am another grid&lt;/div&gt;
+                      &lt;div class="col-md-4">I am also another grid&lt;/div&gt;
+                    &lt;/div>
+                        </pre>
+                    </section> 
+                    <section>
+                        <h2>Other Options</h2>
+                        <p><small>If you don't have any programming experience or would just like another option, there are plenty of sites that will help you out.</small></p>
+                        <p><small><a href="https://webflow.com/" target="_blank">Webflow</a> is one option. It allows you to create responsive websites by just dragging and dropping building blocks within a browser. </small></p>
+                        <h4>Other options:</h4>
+                        <p><a href="http://html.adobe.com/edge/reflow/" target="_blank">Adobe Edge Reflow CC</a></p>
+                        <p><a href="http://macaw.co/" target="_blank">Macaw</a></p>
+                        <img width="45%" src="images/webflow.png">           
+                    </section> 
+                </section>
+
+                <!-- Resources to Learn More -->   
+                <section>
+                    <h2>Resources to Learn More</h2> 
+                    <ol>
+                    <li><a href="http://blog.teamtreehouse.com/beginners-guide-to-responsive-web-design">A beginner's Guide to Responsive Design</a></li>
+                     <li><a href="http://www.onextrapixel.com/2012/11/12/how-to-use-twitter-bootstrap-to-create-a-responsive-website-design/">Using Bootstrap to Create Responsive Website Design</a></li>
+                     <li><a href="http://alistapart.com/article/responsive-web-design/">Responsive Design by Ethan Marcotte (the creator himself)</a></li>
+                    </ol>                   
+                </section>
+
+                <!-- Exercise -->
+                <section>
+                    <h2>Exercise</h2>
+                        <p>Convert a fixed width layout to a responsive layout.</p>
+                        <p>Exercise folder -> open style.css and follow instructions</p>
+                        <h3>Good luck!</h3>
+                        <small>(Only if you absolutely give up, open answer.css)</small>
+                </section>
+            </div>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="Chart.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+        <script src="profile.data.js"></script>
+        <script src="sym.node.data.js"></script>
+        <script src="limit.data.js"></script>
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>

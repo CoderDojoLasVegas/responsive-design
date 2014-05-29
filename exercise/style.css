@@ -1,0 +1,58 @@
+/* Step 1. Convert fixed widths of the grids "width: __ px" to percentages using the magic formula. */
+/* Magic Forumula: ( target / content ) x 100 = result */
+/* Content = 1424
+/* Instead of pixels "px", change to percentage "%" */
+
+/* Step 2. Change width in the body to "max-width" */
+
+/* Step 3. change the display in the media query to "block" */
+/* and set the width to "100%" */
+
+/* Open index.html in browser and refresh to check after you save and make changes to this file. */
+
+/* Body */
+body{
+	width: 1440px;
+}
+
+/* Grids */
+.grid-one, .grid-two, .grid-three, .grid-four{
+	text-align: center;
+	position: relative;
+	display: inline-block;
+	border: 1px solid; 
+	background: #eee;
+	width: 351px;				/* target */
+}
+
+/* Media Query */
+@media screen and (max-width: 1000px) {
+	.grid-one, .grid-two, .grid-three, .grid-four{
+		display: ;
+		width: ;
+	}
+}
+
+
+
+/* Bonus! Convert layout to use Bootstrap scaffolding. Make changes in index.html and style.css if necessary. */
+/* In the index.html
+
+	Link the bootstrap css right after the link to the style.css
+
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+
+	Add the link so the JS for bootstrap before the body ends </body>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    Add Bootstrap scaffolding classes after each grid class (i.e. class="grid-one col-md-3")
+
+	In style.css
+
+    Remove the width of each grid (remove entire line)
+
+ */
